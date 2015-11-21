@@ -14,11 +14,11 @@ import java.util.List;
  */
 public class TestRunner<ID extends Serializable, SECURITY> {
 
-    UserRepository<User<ID>, ID> userRepository;
+    UserRepository<ID> userRepository;
 
     UserBuilder<ID> userBuilder;
 
-    public TestRunner(UserRepository<User<ID>, ID> userRepository, UserBuilder<ID> userBuilder) {
+    public TestRunner(UserRepository<ID> userRepository, UserBuilder<ID> userBuilder) {
         this.userBuilder = userBuilder;
         this.userRepository = userRepository;
     }
@@ -32,7 +32,7 @@ public class TestRunner<ID extends Serializable, SECURITY> {
 
         User<ID> savedUser = userRepository.save(user);
 
-        List<User<ID>> userList = userRepository.findUserByFirstName("Tim");
+        List<? extends User<ID>> userList = userRepository.findUserByFirstName("Tim");
 
 
         System.out.println("Id: "+savedUser.getId());

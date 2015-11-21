@@ -6,31 +6,32 @@
 
     <groupId>com.tporter</groupId>
     <artifactId>data-api</artifactId>
-    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>../main-test</module>
-        <module>../data-jpa</module>
-    </modules>
 
+    <parent>
+        <artifactId>data-tests</artifactId>
+        <groupId>com.tporter</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.data</groupId>
-                <artifactId>spring-data-releasetrain</artifactId>
-                <version>Gosling-RELEASE</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+    <!--<dependencyManagement>-->
+        <!--<dependencies>-->
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.data</groupId>-->
+                <!--<artifactId>spring-data-releasetrain</artifactId>-->
+                <!--<version>Gosling-RELEASE</version>-->
+                <!--<scope>import</scope>-->
+                <!--<type>pom</type>-->
+            <!--</dependency>-->
+        <!--</dependencies>-->
+    <!--</dependencyManagement>-->
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-commons</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.data</groupId>-->
+            <!--<artifactId>spring-data-commons</artifactId>-->
+            <!--&lt;!&ndash;<version>1.7.2.RELEASE</version>&ndash;&gt;-->
+        <!--</dependency>-->
     </dependencies>
 
 

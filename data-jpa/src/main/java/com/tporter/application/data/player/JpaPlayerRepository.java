@@ -11,27 +11,27 @@ public class JpaPlayerRepository implements PlayerRepository<Long> {
     private JpaPlayerBuilder builder;
 
     @Override
-    public Player<Long> getPlayerById(Long aLong) {
+    public Player<Long> getById(Long aLong) {
         return crudRepository.findOne(aLong);
     }
 
     @Override
-    public List<JpaPlayer> getPlayersByFirstName(String name) {
+    public List<JpaPlayer> getByFirstName(String name) {
         return crudRepository.findPlayersByFirstName(name);
     }
 
     @Override
-    public void deletePlayer(Player<Long> player) {
+    public void delete(Player<Long> player) {
         crudRepository.delete(player.getId());
     }
 
     @Override
-    public Player<Long> updatePlayer(Player<Long> player) {
+    public Player<Long> update(Player<Long> player) {
         return crudRepository.save(builder.fromPlayer(player).build());
     }
 
     @Override
-    public Player<Long> savePlayer(Player<Long> player) {
+    public Player<Long> save(Player<Long> player) {
         return crudRepository.save(builder.fromPlayer(player).build());
     }
 }

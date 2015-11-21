@@ -1,5 +1,7 @@
 package com.tporter.application.data.user;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Created by tporter on 11/14/15.
  */

@@ -63,10 +63,10 @@ public class RepositoryConfig {
         return txManager;
     }
 
-
-//    public UserRepository<User<Long>, Long> userRepository(JpaUserRepository jpaUserRepository) {
-//        return jpaUserRepository;
-//    }
+    @Bean
+    public UserRepository<Long> userRepository(JpaCrudUserRepository jpaCrudUserRepository, JpaUserBuilder userBuilder) {
+        return new JpaUserRepository(jpaCrudUserRepository, userBuilder);
+    }
 
     @Bean
     public AnnotationBuilder<Long, String> annotationBuilder() {
