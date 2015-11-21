@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 import java.io.Serializable;
 import java.util.List;
 
-import org.springframework.core.ResolvableTypeProvider;
+//import org.springframework.core.ResolvableTypeProvider;
 
 /**
  * Created by tporter on 11/13/15.
@@ -30,7 +30,7 @@ public class ApplicationTest {
 
         context.getBean(TestRunner.class).run();
 
-       ResolvableTypeProvider t;
+//       ResolvableTypeProvider t;
 
     }
 }

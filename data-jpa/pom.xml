@@ -43,27 +43,27 @@
             <!--<version>5.0.4.Final</version>-->
         <!--</dependency>-->
 
-        <!--<dependency>-->
-            <!--<groupId>hsqldb</groupId>-->
-            <!--<artifactId>hsqldb</artifactId>-->
-            <!--<version>1.8.0.7</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>1.8.0.7</version>
+        </dependency>
 
 
 
 
 
         <!-- Database (H2) -->
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.h2database</groupId>-->
+            <!--<artifactId>h2</artifactId>-->
+        <!--</dependency>-->
 
         <!-- DataSource (HikariCP) -->
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.zaxxer</groupId>-->
+            <!--<artifactId>HikariCP</artifactId>-->
+        <!--</dependency>-->
 
         <!-- JPA Provider (Hibernate) -->
         <dependency>

@@ -1,10 +1,16 @@
 package com.tporter.application.data.player;
 
+import javax.persistence.*;
+
 /**
  * Created by tporter on 11/15/15.
  */
+@Entity
+@Table
 public class JpaPlayer implements Player<Long> {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
     private String firstName;
     private String lastName;

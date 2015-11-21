@@ -39,6 +39,6 @@ public class JpaUserRepository implements UserRepository<Long> {
 
     @Override
     public JpaUser save(User<Long> player) {
-        return null;
+        return repository.save(builder.fromUser(player).build());
     }
 }

@@ -74,7 +74,7 @@ public class RepositoryConfig {
     }
 
     @Bean
-    public UserBuilder<Long> userBuilder() {
+    public JpaUserBuilder userBuilder() {
         return new JpaUserBuilder();
     }
 }
