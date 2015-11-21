@@ -1,8 +1,11 @@
 package com.tporter.application.data.player;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Created by tporter on 11/15/15.
  */
+@Component
 public class JpaPlayerBuilder implements PlayerBuilder<Long> {
 
     private Long id;

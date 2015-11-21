@@ -2,16 +2,21 @@ package com.tporter.application.data.user;
 
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
 /**
  * Created by tporter on 11/14/15.
  */
+@Component
 public class JpaUserRepository implements UserRepository<Long> {
 
     private JpaCrudUserRepository repository;
     private JpaUserBuilder builder;
 
+    @Autowired
     public JpaUserRepository(JpaCrudUserRepository repository, JpaUserBuilder builder) {
         this.repository = repository;
         this.builder = builder;

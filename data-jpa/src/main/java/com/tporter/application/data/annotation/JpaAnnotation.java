@@ -1,7 +1,6 @@
 package com.tporter.application.data.annotation;
 
 import com.tporter.application.data.user.JpaUser;
-import com.tporter.application.data.user.User;
 
 import javax.persistence.*;
 
@@ -13,7 +12,6 @@ import javax.persistence.*;
 public class JpaAnnotation implements Annotation<Long, String> {
 
     @Id
-//    @GeneratedValue(strategy= GenerationType.AUTO)
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
     private String security;

@@ -5,31 +5,46 @@ import org.springframework.stereotype.Component;
 /**
  * Created by tporter on 11/14/15.
  */
-public class JpaUserBuilder extends AbstractUserBuilder<Long> {
+@Component
+public class JpaUserBuilder implements UserBuilder<Long> {
 
     private Long id;
+    protected String firstName;
+    protected String lastName;
+    protected String userName;
 
     public JpaUserBuilder() {
     }
 
-    public JpaUserBuilder(String firstName, String lastName, String userName, Long id) {
-        super(firstName, lastName, userName);
+    public JpaUserBuilder(Long id, String firstName, String lastName, String userName) {
         this.id = id;
-    }
-
-    @Override
-    protected JpaUserBuilder createBuilder() {
-        return new JpaUserBuilder(firstName, lastName, userName, id);
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
     }
 
     @Override
     public JpaUserBuilder fromUser(User<Long> user) {
-        return new JpaUserBuilder(user.getFirstName(), user.getLastName(), user.getUserName(), user.getId());
+        return new JpaUserBuilder(user.getId(), user.getFirstName(), user.getLastName(), user.getUserName());
+    }
+
+    @Override
+    public UserBuilder<Long> withFirstName(String firstName) {
+        return new JpaUserBuilder(id, firstName, lastName, userName);
+    }
+
+    @Override
+    public UserBuilder<Long> withLastName(String lastName) {
+        return new JpaUserBuilder(id, firstName, lastName, userName);
+    }
+
+    @Override
+    public UserBuilder<Long> withUserName(String userName) {
+        return new JpaUserBuilder(id, firstName, lastName, userName);
     }
 
     public JpaUserBuilder withId(Long id) {
-        this.id = id;
-        return createBuilder();
+        return new JpaUserBuilder(id, firstName, lastName, userName);
     }
 
     @Override

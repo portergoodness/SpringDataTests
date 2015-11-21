@@ -5,6 +5,7 @@ import com.tporter.application.data.annotation.JpaAnnotationBuilder;
 import com.tporter.application.data.user.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
@@ -26,6 +27,7 @@ import java.util.Properties;
  * Created by tporter on 11/13/15.
  */
 @Configuration
+@ComponentScan("com.tporter.application.data")
 @EnableJpaRepositories("com.tporter.application.data")
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement
@@ -63,18 +65,18 @@ public class RepositoryConfig {
         return txManager;
     }
 
-    @Bean
-    public UserRepository<Long> userRepository(JpaCrudUserRepository jpaCrudUserRepository, JpaUserBuilder userBuilder) {
-        return new JpaUserRepository(jpaCrudUserRepository, userBuilder);
-    }
+//    @Bean
+//    public UserRepository<Long> userRepository(JpaCrudUserRepository jpaCrudUserRepository, JpaUserBuilder userBuilder) {
+//        return new JpaUserRepository(jpaCrudUserRepository, userBuilder);
+//    }
 
-    @Bean
-    public AnnotationBuilder<Long, String> annotationBuilder() {
-        return new JpaAnnotationBuilder();
-    }
+//    @Bean
+//    public AnnotationBuilder<Long, String> annotationBuilder() {
+//        return new JpaAnnotationBuilder();
+//    }
 
-    @Bean
-    public JpaUserBuilder userBuilder() {
-        return new JpaUserBuilder();
-    }
+//    @Bean
+//    public JpaUserBuilder userBuilder() {
+//        return new JpaUserBuilder();
+//    }
 }
