@@ -1,16 +1,10 @@
 package com.tporter.application;
 
 import com.tporter.application.components.test.TestRunner;
-import com.tporter.application.config.RepositoryConfig;
 import com.tporter.application.data.annotation.AnnotationBuilder;
 import com.tporter.application.data.annotation.AnnotationRepository;
 import com.tporter.application.data.user.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.*;
 
 import java.io.Serializable;
 
@@ -19,7 +13,8 @@ import java.io.Serializable;
  */
 @Configuration
 @ComponentScan("com.tporter.application.components")
-@Import(RepositoryConfig.class)
+//@Import(RepositoryConfig.class)
+@ImportResource("classpath*:data/data-*-config.xml")
 // can import xml config with @ImportXml("classpath:location")
 public class Config<ID extends Serializable, SECURITY> {
 

@@ -1,4 +1,4 @@
-package com.tporter.application.config;
+package com.tporter.application.config.jpa;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
