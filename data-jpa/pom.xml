@@ -3,83 +3,48 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>data-api</artifactId>
+        <artifactId>data-tests</artifactId>
         <groupId>com.tporter</groupId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../data-api/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>data-jpa</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>data-jpa-player</module>
+        <module>data-jpa-config</module>
+        <module>data-jpa-annotation-user</module>
+    </modules>
 
+    <properties>
+        <release-train>Evans-SR3</release-train>
+    </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>4.2.2.RELEASE</version>
-        </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.data</groupId>-->
-            <!--<artifactId>spring-data-jpa</artifactId>-->
-        <!--</dependency>-->
-        <dependency>
-            <groupId>com.tporter</groupId>
-            <artifactId>data-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-releasetrain</artifactId>
+                <version>${release-train}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <version>1.2.4.RELEASE</version>
-        </dependency>
+            <dependency>
+                <groupId>io.spring.platform</groupId>
+                <artifactId>platform-bom</artifactId>
+                <version>1.1.2.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-jpa</artifactId>
-        </dependency>
+            <!--<dependency>-->
+                <!--<groupId>org.springframework</groupId>-->
+                <!--<artifactId>spring-context</artifactId>-->
+                <!--<version>${spring.context.version}</version>-->
+            <!--</dependency>-->
+        </dependencies>
+    </dependencyManagement>
 
-        <dependency>
-            <groupId>hsqldb</groupId>
-            <artifactId>hsqldb</artifactId>
-            <version>1.8.0.7</version>
-        </dependency>
-
-
-
-
-        <!--<dependency>-->
-            <!--<groupId></groupId>-->
-            <!--<artifactId>spring-</artifactId>-->
-        <!--</dependency>-->
-        <!-- Database (H2) -->
-        <!--<dependency>-->
-            <!--<groupId>com.h2database</groupId>-->
-            <!--<artifactId>h2</artifactId>-->
-            <!--<version>1.4.185</version>-->
-        <!--</dependency>-->
-
-        <!--&lt;!&ndash; DataSource (HikariCP) &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>com.zaxxer</groupId>-->
-            <!--<artifactId>HikariCP</artifactId>-->
-            <!--<version>2.2.5</version>-->
-        <!--</dependency>-->
-
-        <!--&lt;!&ndash; JPA Provider (Hibernate) &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.hibernate</groupId>-->
-            <!--<artifactId>hibernate-entitymanager</artifactId>-->
-            <!--<version>4.3.8.Final</version>-->
-        <!--</dependency>-->
-
-        <!--&lt;!&ndash; Spring Data JPA &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.data</groupId>-->
-            <!--<artifactId>spring-data-jpa</artifactId>-->
-            <!--<version>1.7.2.RELEASE</version>-->
-        <!--</dependency>-->
-
-    </dependencies>
 </project>

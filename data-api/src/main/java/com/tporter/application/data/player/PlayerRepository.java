@@ -1,19 +1,16 @@
 package com.tporter.application.data.player;
 
+import com.tporter.application.data.DefaultRepository;
+
+import java.io.Serializable;
 import java.util.List;
 
 /**
+ * Repository Specific to the Player Data Object
  * Created by tporter on 11/15/15.
  */
-public interface PlayerRepository<ID> {
+public interface PlayerRepository<ID extends Serializable> extends DefaultRepository<Player<ID>, ID> {
 
-    Player<ID> getPlayerById(ID id);
+    List<? extends Player<ID>> getByFirstName(String name);
 
-    List<? extends Player<ID>> getPlayersByFirstName(String name);
-
-    void deletePlayer(Player<ID> player);
-
-    Player<ID> updatePlayer(Player<ID> player);
-
-    Player<ID> savePlayer(Player<ID> player);
 }
