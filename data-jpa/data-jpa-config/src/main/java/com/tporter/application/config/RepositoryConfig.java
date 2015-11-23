@@ -1,8 +1,5 @@
 package com.tporter.application.config;
 
-import com.tporter.application.data.annotation.AnnotationBuilder;
-import com.tporter.application.data.annotation.JpaAnnotationBuilder;
-import com.tporter.application.data.user.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -20,8 +17,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
-import java.io.Serializable;
-import java.util.Properties;
 
 /**
  * Created by tporter on 11/13/15.
@@ -65,18 +60,4 @@ public class RepositoryConfig {
         return txManager;
     }
 
-//    @Bean
-//    public UserRepository<Long> userRepository(JpaCrudUserRepository jpaCrudUserRepository, JpaUserBuilder userBuilder) {
-//        return new JpaUserRepository(jpaCrudUserRepository, userBuilder);
-//    }
-
-//    @Bean
-//    public AnnotationBuilder<Long, String> annotationBuilder() {
-//        return new JpaAnnotationBuilder();
-//    }
-
-//    @Bean
-//    public JpaUserBuilder userBuilder() {
-//        return new JpaUserBuilder();
-//    }
 }

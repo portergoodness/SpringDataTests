@@ -23,9 +23,21 @@
             <artifactId>data-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.tporter</groupId>-->
+            <!--<artifactId>data-jpa-config</artifactId>-->
+            <!--<version>1.0-SNAPSHOT</version>-->
+        <!--</dependency>-->
+
         <dependency>
             <groupId>com.tporter</groupId>
-            <artifactId>data-jpa</artifactId>
+            <artifactId>data-jpa-player</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.tporter</groupId>
+            <artifactId>data-jpa-annotation-user</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
