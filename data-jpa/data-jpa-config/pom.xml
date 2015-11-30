@@ -11,6 +11,14 @@
 
     <artifactId>data-jpa-config</artifactId>
 
+    <repositories>
+        <repository>
+            <id>spring-milestone</id>
+            <name>Spring Maven MILESTONE Repository</name>
+            <url>http://maven.springframework.org/milestone</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>

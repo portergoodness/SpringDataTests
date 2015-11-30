@@ -3,19 +3,20 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>data-tests</artifactId>
+        <artifactId>data-foo</artifactId>
         <groupId>com.tporter</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>data-foo</artifactId>
+    <artifactId>data-foo-annotation-user</artifactId>
 
-    <packaging>pom</packaging>
-    <modules>
-        <module>data-foo-config</module>
-        <module>data-foo-annotation-user</module>
-    </modules>
-
+    <dependencies>
+        <dependency>
+            <groupId>com.tporter</groupId>
+            <artifactId>data-foo-config</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

@@ -9,12 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>data-foo</artifactId>
-
+    <artifactId>data-mongo</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>data-foo-config</module>
-        <module>data-foo-annotation-user</module>
+        <module>data-mongo-config</module>
     </modules>
 
 
